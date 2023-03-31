@@ -28,12 +28,15 @@ public:
 	UPROPERTY(Category = "Tutorial Variables", EditInstanceOnly)
 		int32 EditInstanceOnlyInt = 14;
 
-	UPROPERTY(Category = "Tutorial Variables", EditAnywhere, BlueprintReadWrite)
-		float Speed = 400.f;
+	//UPROPERTY(Category = "Tutorial Variables", EditAnywhere, BlueprintReadWrite)
+	//	float Speed = 400.f;
 
 protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
+//	// Called when the game starts or when spawned
+//	virtual void BeginPlay() override;
+
+	void RotateTurret(FVector LookAtTarget);
+	void Fire();
 
 private:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
@@ -53,11 +56,8 @@ private:
 	UPROPERTY(Category = "Tutorial Variables", EditAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
 		int32 PrivateEditAnywhereInt = 22;
 
-public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
-
-	// Called to bind functionality to input
-	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+//public:	
+//	// Called every frame
+//	virtual void Tick(float DeltaTime) override;
 
 };
