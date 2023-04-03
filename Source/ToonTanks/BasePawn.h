@@ -31,6 +31,8 @@ public:
 	//UPROPERTY(Category = "Tutorial Variables", EditAnywhere, BlueprintReadWrite)
 	//	float Speed = 400.f;
 
+	void HandleDestruction();
+
 protected:
 //	// Called when the game starts or when spawned
 //	virtual void BeginPlay() override;
