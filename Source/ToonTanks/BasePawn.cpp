@@ -38,12 +38,12 @@ void ABasePawn::RotateTurret(FVector LookAtTarget)
 
 void ABasePawn::Fire()
 {
-	GetWorld()->SpawnActor<AProjectile>(
-		ProjectileClass,
-		ProjectileSpawnPoint->GetComponentLocation(),
-		ProjectileSpawnPoint->GetComponentRotation()
-		);
+	FVector Location = ProjectileSpawnPoint->GetComponentLocation();
+	FRotator Rotation = ProjectileSpawnPoint->GetComponentRotation();
 
+	auto Projectile = GetWorld()->SpawnActor<AProjectile>(ProjectileClass, Location, Rotation );
+	Projectile->SetOwner(this);
+	
 	/*DrawDebugSphere(
 		GetWorld(),
 			ProjectileSpawnPoint->GetComponentLocation(),
